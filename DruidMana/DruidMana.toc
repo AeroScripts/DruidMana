@@ -1,0 +1,11 @@
+## Interface: 11302
+## Title: |cFFFFFFFFDruidMana|r|cFF00FF00 v1.0|r
+## Author: Aero
+## Notes: Shows mana value when shapeshifted
+## Version: 1.0
+## RequiredDeps: 
+## OptionalDeps: 
+## SavedVariables: 
+## SavedVariablesPerCharacter: DruidManaConfig
+
+dmana.lua
