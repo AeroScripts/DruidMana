@@ -1,8 +1,6 @@
 local bar = CreateFrame("StatusBar", nil, PlayerFrame)
 bar:SetStatusBarTexture("Interface\\TargetingFrame\\UI-StatusBar")
 bar:GetStatusBarTexture():SetHorizTile(false)
-bar:SetMinMaxValues(0, UnitPowerMax("player", 0))
-bar:SetValue(UnitPower("player", 0))
 bar:SetWidth(118)
 bar:SetHeight(8)
 bar:SetPoint("TOPLEFT", PlayerFrame, "TOPLEFT", 107, -66)
@@ -25,6 +23,10 @@ bar:RegisterEvent("UNIT_POWER_UPDATE")
 bar:RegisterEvent("UPDATE_SHAPESHIFT_FORM")
 bar:SetScript("OnEvent", function(self, evt, ...)
     if evt == "UNIT_POWER_UPDATE" then
+        --if not self.hasSetMax then
+        --    self.hasSetMax = true
+        self:SetMinMaxValues(0, UnitPowerMax("player", 0))
+        --end
         self:SetValue(UnitPower("player", 0))
     elseif evt == "UPDATE_SHAPESHIFT_FORM" then
         local form = GetShapeshiftForm()
