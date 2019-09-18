@@ -43,7 +43,7 @@ bar:SetScript("OnEvent", function(self, evt, ...)
         self:SetValue(UnitPower("player", 0))
     elseif evt == "UPDATE_SHAPESHIFT_FORM" then
         local form = GetShapeshiftForm()
-        if form == 1 or form == 3 then
+        if form == 1 or form == 2 or form == 3 then
             self.background:Show()
             self:Show()
             self.border:Show()
@@ -56,7 +56,7 @@ bar:SetScript("OnEvent", function(self, evt, ...)
 end)
 
 local form = GetShapeshiftForm()
-if form == 1 or form == 3 then
+if form == 1 or form == 2 or form == 3 then
     bar.background:Show()
     bar:Show()
     bar.border:Show()
